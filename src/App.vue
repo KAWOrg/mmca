@@ -1,7 +1,18 @@
 <template>
+  컴포넌트를 갈아끼울 탭
   <nav>
-    <router-link to="/">Home MMCA</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">서울</router-link> |
+    <router-link to="/">과천</router-link> |
+    <router-link to="/">덕수궁</router-link> |
+    <router-link to="/">청주</router-link>
+  </nav>
+
+  페이지 이동할 네비바
+  <nav>
+    <router-link to="/exhibit">전시</router-link> |
+    <router-link to="/edu">교육</router-link> |
+    <router-link to="/event">이벤트</router-link> |
+    <router-link to="/digital">디지털 미술관</router-link>
   </nav>
   <router-view/>
 </template>
