@@ -15,6 +15,11 @@ yarn serve
 yarn build
 ```
 
+### node.js version
+```
+v20.15.1
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 "# mmca" 
