@@ -6,7 +6,7 @@
     <router-link to="/">덕수궁</router-link> |
     <router-link to="/">청주</router-link>
   </nav>
-
+<button @click="getData">얍</button>
   페이지 이동할 네비바
   <nav>
     <router-link to="/exhibit">전시</router-link> |
@@ -17,6 +17,26 @@
   <router-view/>
 </template>
 
+<script>
+import mainPage from './api/mainPage';
+
+export default {
+  name : 'Main',
+  methods: {
+    getData() {
+      mainPage.getList()
+      .then((res) => {
+        console.log(res)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+    }
+    
+  }
+  
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
