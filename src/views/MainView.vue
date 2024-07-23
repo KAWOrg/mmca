@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <PrevInfo msg="국립현대미술관 for Vue.js"/>
-    <FloorInfo />
+    <PrevInfo prevInfo="11"/>{{ info }}
+    <FloorInfo floorInfo="층별안내"/>
   </div>
 </template>
 
@@ -16,6 +16,13 @@ export default {
   components: {
     PrevInfo,
     FloorInfo
+  },
+  props: {
+
+   info : location.state
+  },
+  mounted() {
+    console.log(this.info)
   }
 }
 </script>
