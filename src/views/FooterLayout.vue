@@ -1,3 +1,5 @@
 <template>
-    푸터푸터
+    <div>
+        푸터푸터
+    </div>
 </template>

@@ -1,8 +1,7 @@
 <template>
   <div class="MainPage">
-    <MainPageHeader></MainPageHeader>
-    <HomeLayout @set-region=this.setRegion ></HomeLayout>
-    <PrevInfo :prevInfo="this.region"/>{{ region }}
+    <HomeLayout @region="setRegion" ></HomeLayout>
+    <PrevInfo :region="this.region"/>{{ region }}
     <FloorInfo floorInfo="층별안내"/>
   </div>
 </template>
@@ -11,7 +10,6 @@
 // @ is an alias to /src
 import mainPage from '@/api/mainPage';
 
-import MainPageHeader from '@/views/MainPage/MainPageHeader.vue'
 import HomeLayout from '@/views/MainPage/HomeLayout.vue'
 import PrevInfo from '@/views/MainPage/PrevInfo.vue'
 import FloorInfo from '@/views/MainPage/FloorInfo.vue'
@@ -19,7 +17,6 @@ import FloorInfo from '@/views/MainPage/FloorInfo.vue'
 export default {
   name: 'MainView',
   components: {
-    MainPageHeader,
     HomeLayout,
     PrevInfo,
     FloorInfo,

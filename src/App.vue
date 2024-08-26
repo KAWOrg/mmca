@@ -1,4 +1,5 @@
 <template>
+  <HeaderLayout></HeaderLayout>
   <MainPage></MainPage>
   <MyPage></MyPage>
   <AdminPage></AdminPage>
@@ -11,6 +12,7 @@ import MainPage from './views/MainPageView.vue';
 import MyPage from './views/MyPageView.vue';
 import AdminPage from './views/AdminPageView.vue';
 import FooterLayout from './views/FooterLayout.vue';
+import HeaderLayout from './views/HeaderLayout.vue';
 
 export default {
   name : 'Main',
@@ -18,7 +20,8 @@ export default {
     MainPage,
     MyPage,
     AdminPage,
-    FooterLayout,
+    HeaderLayout,
+    FooterLayout
   },
   methods: {
       // 미술관 목록 불러오기 -> 헤더, 메인 컴포넌트로 보내기

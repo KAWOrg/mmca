@@ -11,10 +11,11 @@ const routes = [
    { path: '/', name: 'main-page', component: MainPageView, props: true },
    { path: '/myPage', name: 'my-page', component: MyPageView, props: true },
    { path: '/admin', name: 'admin-page', component: AdminPageView, props: true },
-  // { path: '/exhvt', name: 'exhibition', component: ExhibitionView, props: true },
-  // { path: '/edu', name: 'education', component: EducationView, props: true },
-  // { path: '/evt', name: 'event', component: EventView, props: true },
-  // { path: '/dgtm', name: 'digital-museum', component: DigitalMuseumView, props: true },
+
+   { path: '/main/exhvt', name: 'exhibition', component: ExhibitionView, props: true },
+   { path: '/main/edu', name: 'education', component: EducationView, props: true },
+   { path: '/main/evt', name: 'event', component: EventView, props: true },
+   { path: '/main/dgtm', name: 'digital-museum', component: DigitalMuseumView, props: true },
 
   
   // { path: '/exhibit', name: 'AboutView', component: () => import('../views/AboutView.vue') },
