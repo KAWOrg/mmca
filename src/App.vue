@@ -1,21 +1,24 @@
 <template>
-    <HeaderLayout></HeaderLayout>
-    <MainView></MainView>
-    <FooterLayout></FooterLayout>
+  <MainPage></MainPage>
+  <MyPage></MyPage>
+  <AdminPage></AdminPage>
+  <FooterLayout></FooterLayout>
 </template>
 
 <script>
 import mainPage from '@/api/mainPage';
-import MainView from './views/MainView.vue';
-import FooterLayout from './components/layout/FooterLayout.vue';
-import HeaderLayout from './components/layout/HeaderLayout.vue';
+import MainPage from './views/MainPageView.vue';
+import MyPage from './views/MyPageView.vue';
+import AdminPage from './views/AdminPageView.vue';
+import FooterLayout from './views/FooterLayout.vue';
 
 export default {
   name : 'Main',
   components: {
-    MainView,
+    MainPage,
+    MyPage,
+    AdminPage,
     FooterLayout,
-    HeaderLayout
   },
   methods: {
       // 미술관 목록 불러오기 -> 헤더, 메인 컴포넌트로 보내기
