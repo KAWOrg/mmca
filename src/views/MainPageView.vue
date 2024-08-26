@@ -1,8 +1,8 @@
 <template>
   <div class="MainPage">
     <MainPageHeader></MainPageHeader>
-    <HomeLayout></HomeLayout>
-    <PrevInfo prevInfo="관람정보"/>{{ info }}
+    <HomeLayout @set-region=this.setRegion ></HomeLayout>
+    <PrevInfo :prevInfo="this.region"/>{{ region }}
     <FloorInfo floorInfo="층별안내"/>
   </div>
 </template>
@@ -27,7 +27,18 @@ export default {
   props: {
 
    info : location.state
+
   },
+  data(){
+    return{
+      region: ''
+    }
+  },
+  methods:{
+    setRegion(region){
+      this.region = region;
+    }
+  }
 
 }
 </script>
