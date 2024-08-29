@@ -1,8 +1,17 @@
 <template>
   <HeaderLayout></HeaderLayout>
-  <MainPage></MainPage>
+  <nav>
+    <RouterLink to="/">MainPage</RouterLink>
+    <RouterLink to="/myPage">MyPage</RouterLink>
+    <RouterLink to="/admin">AdminPage</RouterLink>
+  </nav>
+  <!-- <MainPage></MainPage>
   <MyPage></MyPage>
-  <AdminPage></AdminPage>
+  <AdminPage></AdminPage> -->
+
+  <main>
+    <RouterView />
+  </main>
   <FooterLayout></FooterLayout>
 </template>
 
@@ -10,7 +19,7 @@
 import mainPage from '@/api/mainPage';
 import MainPage from './views/MainPageView.vue';
 import MyPage from './views/MyPageView.vue';
-import AdminPage from './views/AdminPageView.vue';
+// import AdminPage from './views/AdminPage/AdminPageView.vue';
 import FooterLayout from './views/FooterLayout.vue';
 import HeaderLayout from './views/HeaderLayout.vue';
 
@@ -19,7 +28,7 @@ export default {
   components: {
     MainPage,
     MyPage,
-    AdminPage,
+    // AdminPage,
     HeaderLayout,
     FooterLayout
   },
