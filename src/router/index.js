@@ -7,15 +7,17 @@ import ExhibitionView from '@/views/ExhibitionView.vue'
 import EducationView from '@/views/EducationView.vue'
 import DigitalMuseumView from '@/views/DigitalMuseumView.vue'
 
-import AdminExhibitionView from '@/views/AdminPage/AdminExhibitionView.vue'
+import AdminExhibitionView from '@/views/AdminPage/Exhibition/AdminExhibitionView.vue'
+import AddExhibitionView from "@/views/AdminPage/Exhibition/AddExhibitionView.vue";
 
 const routes = [
    { path: '/', name: 'main-page', component: MainPageView, props: true },
    { path: '/myPage', name: 'my-page', component: MyPageView, props: true },
    { path: '/admin', name: 'admin-page', component: AdminPageView, props: true },
-   { path: '/admin/exhvt', name: 'admin-exhibition', component: AdminExhibitionView, props: true },
+   { path: '/admin/exhbt', name: 'admin-exhibition', component: AdminExhibitionView, props: true },
+   { path: '/admin/exhbt/addExhbt', name: 'admin-add-exhibition', component: AddExhibitionView, props: true },
 
-   { path: '/main/exhvt', name: 'exhibition', component: ExhibitionView, props: true },
+   { path: '/main/exhbt', name: 'exhibition', component: ExhibitionView, props: true },
    { path: '/main/edu', name: 'education', component: EducationView, props: true },
    { path: '/main/evt', name: 'event', component: EventView, props: true },
    { path: '/main/dgtm', name: 'digital-museum', component: DigitalMuseumView, props: true },

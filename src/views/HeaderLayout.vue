@@ -13,7 +13,7 @@
             {{ tab.name }}
         </button>
         <nav>
-            <router-link to="/exhvt">전시</router-link> |
+            <router-link to="/exhbt">전시</router-link> |
             <router-link to="/edu">교육</router-link> |
             <router-link to="/evt">이벤트</router-link> |
             <router-link to="/dgtm">디지털미술관</router-link>
@@ -29,7 +29,7 @@
 
 <script>
 export default {
-    name : 'header',
+    name : 'main-header',
     methods : {},
     data() {
       return {

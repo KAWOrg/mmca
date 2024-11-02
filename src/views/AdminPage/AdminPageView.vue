@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <router-link to="/admin/exhvt">전시관리</router-link>
+    <router-link to="/admin/exhbt">전시관리</router-link>
     <button>전시품 관리</button>
     <button>교육 관리</button>
     <button>이벤트 관리</button>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import AdminExhibitionView from './AdminExhibitionView.vue'
+import AdminExhibitionView from './Exhibition/AdminExhibitionView.vue'
 
 export default {
   name : 'Admin',

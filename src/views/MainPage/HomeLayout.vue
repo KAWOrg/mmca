@@ -12,7 +12,7 @@
 
         오른쪽에 메뉴
         <nav>
-            <router-link to="/main/exhvt">전시</router-link> |
+            <router-link to="/main/exhbt">전시</router-link> |
             <router-link to="/main/edu">교육</router-link> |
             <router-link to="/main/evt">이벤트</router-link> |
             <router-link to="/main/dgtm">디지털미술관</router-link>
