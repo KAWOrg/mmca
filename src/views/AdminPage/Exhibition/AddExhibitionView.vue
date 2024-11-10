@@ -3,40 +3,40 @@
 
     <div>
         <div>
-            <span>지역</span>
-            <select name="" id="" @v-model= "exhbtInfo.region">
+            <span>미술관</span>
+            <select name="" id="" v-model= "exhbtInfo.musumCd">
                 <option default>선택</option>
-                <option value="0">서울</option>
-                <option value="1">과천</option>
-                <option value="2">덕수궁</option>
-                <option value="3">청주</option>
+                <option value="001">서울</option>
+                <option value="002">과천</option>
+                <option value="003">덕수궁</option>
+                <option value="004">청주</option>
             </select>
         </div>
 
         <div>
             <span>전시명</span>
-            <input type="text" @v-model="exhbtInfo.exhbtNm">
+            <input type="text" v-model="exhbtInfo.prgrmTitle">
         </div>
         <div>
             <span>기간</span>
-            <input type="date" @v-model="exhbtInfo.exhbtDate">
+            <input type="date" v-model="exhbtInfo.prgrmStrtDt"> ~ <input type="date" v-model="exhbtInfo.prgrmEndDt">
         </div>
         <div>
             <span>주최/후원</span>
-            <input type="text" @v-model="exhbtInfo.exhbtSpon">
+            <input type="text" v-model="exhbtInfo.prgrmHost">
         </div>
         <div>
             <span>관람료</span>
-            <input type="number" @v-model="exhbtInfo.exhbtFee">
+            <input type="number" v-model="exhbtInfo.prgrmPrice">
         </div>
         <div>
             <span>관람정원</span>
-            <input type="checkbox" id="online" @v-model="exhbtSpectator.checkBox"><label for="online">온라인 - {{ exhbtSpectator.spectator.onlineSpectator }}<span>명</span></label>
-            <input type="checkbox" id="offline" @v-model="exhbtSpectator.checkBox"><label for="offline">오프라인 - {{ exhbtSpectator.spectator.offlineSpectator }}<span>명</span></label>
+            <label for="online">온라인 - <input type="number" v-model="exhbtSpectator.onlineMaxPtcp"><span>명</span></label>
+            <label for="offline">오프라인 - <input type="number" v-model="exhbtSpectator.maxPtcp"><span>명</span></label>
         </div>
         <div>
             <span>썸네일</span>
-            <button>+ 첨부하기</button>
+            <input type="file"/>
             <div>
                 <div class="imgBox"><img src="" alt=""><button @click="fnDeleteThumbnailImg">X</button></div>
             </div>
@@ -65,23 +65,23 @@ import { ref, watch } from 'vue';
 
 const props = defineProps(['kind'])
 
-const exhbtInfo = ref({
-    region: null,
-    exhbtNm: null,
-    exhbtFee: null,
-    exhbtDate: null,
-    exhbtSpon: null,
-    exhbtFee: null,
+const BASE_URL = '/api/musumAdminInfo';
 
+// 전시 등록 정보
+const exhbtInfo = ref({
+    prgrmId: 1,
+    musumCd: null,
+    prgrmTitle: null,
+    prgrmPrice: null,
+    prgrmStrtDt: null,
+    prgrmEndDt: null,
+    prgrmHost: null,
 })
 
 // 관람정원
 const exhbtSpectator = ref({
-    checkBox: [],
-    spectator: {
-        onlineSpectator: 0,
-        offlineSpectator: 0
-    }
+    onlineMaxPtcp: 0,
+    maxPtcp: 0
 })
 
 // 썸네일 삭제
@@ -105,8 +105,18 @@ const fnCancle = () => {
 }
 
 // 전시품 등록
-const fnAddExhbt = () => {
+const fnAddExhbt = async () => {
 
+    let param = {...exhbtInfo.value, ...exhbtSpectator.value}
+    await axios.post(BASE_URL+'/addExhb', param).then((res) => {
+        console.log(res);
+        
+        // if(response) alert("전시가 등록되었습니다.")
+        // else{  
+        //     console.error('Error fetching the list:', res.error);
+        //     alert("전시가 등록 중 오류가 발생했습니다.")
+        // }
+    })
 }
 </script>
 <style>

@@ -15,18 +15,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import axios from "axios";
 
 const addExhbYN = ref(false)
-
-// const test = async () => {
-//   try {
-//       const response = await axios.get('/api/musumInfo/getMusumList');
-//       return response.data;
-//   } catch (error) {
-//       console.error('Error fetching the list:', error);
-//       throw error;
-//   }
-// }
 
 </script>
