@@ -4,10 +4,9 @@
 
         가운데에 지역 선택 버튼
         <nav>
-            <button @click="$emit('region', 'so')">서울</button>
-            <button @click="$emit('region', 'gc')" >과천</button>
-            <button @click="$emit('region', 'du')">덕수궁</button>
-            <button @click="$emit('region', 'cj')">청주</button>
+            <button v-for="(item, index) in musumList" :key="index" @click="$emit('musumInfo', item)">
+                {{ item.musumNm }}
+            </button>
         </nav>
 
         오른쪽에 메뉴
@@ -22,19 +21,11 @@
 <script>
 export default {
   name: 'MainView',
-  data(){
-    return {
-        region : '',
-
+  props: {
+    musumList: {
+      type: Array,
+      required: true
     }
-  },
-  methods: {
-      changeMain(region){
-          this.region = region;
-
-          this.$emit("region", region);
-      },
-
   }
 }
 

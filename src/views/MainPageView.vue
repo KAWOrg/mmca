@@ -1,7 +1,7 @@
 <template>
   <div class="MainPage">
-    <HomeLayout @region="setRegion" ></HomeLayout>
-    <PrevInfo :region="this.region"/>{{ region }}
+    <HomeLayout @musumInfo="setMusumInfo" :musumList ="musumList" ></HomeLayout>
+    <PrevInfo :musumInfo="musumInfo"/>{{ musumInfo.musumNm }}
     <FloorInfo floorInfo="층별안내"/>
   </div>
 </template>
@@ -21,19 +21,27 @@ export default {
     PrevInfo,
     FloorInfo,
   },
+  // props: {
+  //  info : location.state,
+  // },
   props: {
-
-   info : location.state
-
+    info: {
+      type: Object,
+      default: () => ({}),
+    },
+    musumList: {
+      type: Array,
+      required: true,
+    },
   },
   data(){
     return{
-      region: ''
+      musumInfo: {}
     }
   },
   methods:{
-    setRegion(region){
-      this.region = region;
+    setMusumInfo(musumInfo){
+      this.musumInfo = musumInfo;
     }
   }
 

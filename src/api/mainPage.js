@@ -13,8 +13,5 @@ let getListTest = async () => {
 }
 
 export default {
-    getList: function() {
-        return axios.get(BASE_URL + '/getMusumList');
-    },
     getListTest
 }

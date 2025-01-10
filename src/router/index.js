@@ -11,7 +11,7 @@ import AdminExhibitionView from '@/views/AdminPage/Exhibition/AdminExhibitionVie
 import AddExhibitionView from "@/views/AdminPage/Exhibition/AddExhibitionView.vue";
 
 const routes = [
-   { path: '/', name: 'main-page', component: MainPageView, props: true },
+   { path: '/', name: 'main-page', component: MainPageView, props: route => ({ musumList : route.params.musumList }) },
    { path: '/myPage', name: 'my-page', component: MyPageView, props: true },
    { path: '/admin', name: 'admin-page', component: AdminPageView, props: true },
    { path: '/admin/exhbt', name: 'admin-exhibition', component: AdminExhibitionView, props: true },
