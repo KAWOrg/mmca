@@ -5,7 +5,7 @@
     <button>교육 관리</button>
     <button>이벤트 관리</button>
     <button>디지털미술관 관리</button>
-    <button>시설정보 관리</button>
+    <router-link to="/admin/place">시설정보 관리</router-link>
     <button>사용자 관리</button>
   </nav>
   

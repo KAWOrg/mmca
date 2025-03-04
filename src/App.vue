@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import mainPage from '@/api/mainPage';
+import museums from '@/api/museum/museums';
 import MainPage from './views/MainPageView.vue';
 import MyPage from './views/MyPageView.vue';
 // import AdminPage from './views/AdminPage/AdminPageView.vue';
@@ -35,7 +35,7 @@ export default {
   methods: {
       // 미술관 목록 불러오기 -> 헤더, 메인 컴포넌트로 보내기
      async getMusumList() {
-        mainPage.getListTest()
+      museums.getMuseums()
         .then((res) => {
           this.musumList = res;
         }).catch((err) => {

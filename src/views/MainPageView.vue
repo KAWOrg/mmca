@@ -8,8 +8,6 @@
 
 <script>
 // @ is an alias to /src
-import mainPage from '@/api/mainPage';
-
 import HomeLayout from '@/views/MainPage/HomeLayout.vue'
 import PrevInfo from '@/views/MainPage/PrevInfo.vue'
 import FloorInfo from '@/views/MainPage/FloorInfo.vue'
