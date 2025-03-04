@@ -1,18 +1,20 @@
 <template>
-  <HeaderLayout></HeaderLayout>
-  <nav>
-    <RouterLink to="/">MainPage</RouterLink>
-    <RouterLink to="/myPage">MyPage</RouterLink>
-    <RouterLink to="/admin">AdminPage</RouterLink>
-  </nav>
-  <!-- <MainPage></MainPage>
-  <MyPage></MyPage>
-  <AdminPage></AdminPage> -->
+  <div>
+    <HeaderLayout></HeaderLayout>
+    <nav>
+      <RouterLink to="/">MainPage</RouterLink>
+      <RouterLink to="/myPage">MyPage</RouterLink>
+      <RouterLink to="/admin">AdminPage</RouterLink>
+    </nav>
+    <!-- <MainPage></MainPage>
+    <MyPage></MyPage>
+    <AdminPage></AdminPage> -->
 
-  <main>
-    <RouterView :musumList="musumList"/>
-  </main>
-  <FooterLayout></FooterLayout>
+    <main>
+      <RouterView :musumList="musumList"/>
+    </main>
+    <FooterLayout :musumList="musumList"/>
+  </div>
 </template>
 
 <script>

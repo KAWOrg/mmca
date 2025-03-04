@@ -1,7 +1,7 @@
 <template>
   <div class="MainPage">
     <HomeLayout @musumInfo="setMusumInfo" :musumList ="musumList"></HomeLayout>
-    <PrevInfo :musumInfo="musumInfo"/>{{ musumInfo.musumNm }}
+    <PrevInfo :musumInfo="musumInfo"/>
     <FloorInfo floorInfo="층별안내"/>
   </div>
 </template>
