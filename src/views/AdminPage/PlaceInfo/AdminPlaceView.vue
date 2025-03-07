@@ -20,7 +20,7 @@
     </div>
 </template>
 <script>
-import AdminInfoForm from '@/components/admin/Popup/InfoForm.vue'
+import AdminInfoForm from '@/components/admin/popup/InfoForm.vue'
 
 export default {
     name: 'admin-place',

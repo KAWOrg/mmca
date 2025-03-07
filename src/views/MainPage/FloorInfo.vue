@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <h3>층별 안내</h3>
+    <h3>층별안내</h3>
     <ul>
 
     </ul>

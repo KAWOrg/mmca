@@ -3,7 +3,7 @@
     <HomeLayout @musumInfo="setMusumInfo" :musumList ="musumList"></HomeLayout>
     <PrevInfo :musumInfo="musumInfo"/>
     <FloorInfo floorInfo="층별안내"/>
-    <Convenience :ConvenienceList="ConvenienceList"/>
+    <PlaceInfo :ConvenienceList="ConvenienceList" :CultureList="CultureList" />
   </div>
 </template>
 
@@ -12,7 +12,7 @@
 import HomeLayout from '@/views/MainPage/HomeLayout.vue'
 import PrevInfo from '@/views/MainPage/PrevInfo.vue'
 import FloorInfo from '@/views/MainPage/FloorInfo.vue'
-import Convenience from '@/views/MainPage/Convenience.vue'
+import PlaceInfo from '@/views/MainPage/PlaceInfo.vue'
 import museumPlace from '@/api/museum/museumPlace'
 
 export default {
@@ -21,7 +21,7 @@ export default {
     HomeLayout,
     PrevInfo,
     FloorInfo,
-    Convenience
+    PlaceInfo
   },
   // props: {
   //  info : location.state,
