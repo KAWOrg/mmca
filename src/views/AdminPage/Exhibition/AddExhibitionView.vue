@@ -1,62 +1,64 @@
 <template>
-    <h1>전시 등록</h1>
-
     <div>
-        <div>
-            <span>미술관</span>
-            <select name="" id="" v-model= "exhbtInfo.musumCd">
-                <option default>선택</option>
-                <option value="001">서울</option>
-                <option value="002">과천</option>
-                <option value="003">덕수궁</option>
-                <option value="004">청주</option>
-            </select>
-        </div>
+        <h1>전시 등록</h1>
 
         <div>
-            <span>전시명</span>
-            <input type="text" v-model="exhbtInfo.prgrmTitle">
-        </div>
-        <div>
-            <span>기간</span>
-            <input type="date" v-model="exhbtInfo.prgrmStrtDt"> ~ <input type="date" v-model="exhbtInfo.prgrmEndDt">
-        </div>
-        <div>
-            <span>주최/후원</span>
-            <input type="text" v-model="exhbtInfo.prgrmHost">
-        </div>
-        <div>
-            <span>관람료</span>
-            <input type="number" v-model="exhbtInfo.prgrmPrice">
-        </div>
-        <div>
-            <span>관람정원</span>
-            <label for="online">온라인 - <input type="number" v-model="exhbtSpectator.onlineMaxPtcp"><span>명</span></label>
-            <label for="offline">오프라인 - <input type="number" v-model="exhbtSpectator.maxPtcp"><span>명</span></label>
-        </div>
-        <div>
-            <span>썸네일</span>
-            <input type="file"/>
             <div>
-                <div class="imgBox"><img src="" alt=""><button @click="fnDeleteThumbnailImg">X</button></div>
+                <span>미술관</span>
+                <select name="" id="" v-model= "exhbtInfo.musumCd">
+                    <option default>선택</option>
+                    <option value="001">서울</option>
+                    <option value="002">과천</option>
+                    <option value="003">덕수궁</option>
+                    <option value="004">청주</option>
+                </select>
+            </div>
+
+            <div>
+                <span>전시명</span>
+                <input type="text" v-model="exhbtInfo.prgrmTitle">
+            </div>
+            <div>
+                <span>기간</span>
+                <input type="date" v-model="exhbtInfo.prgrmStrtDt"> ~ <input type="date" v-model="exhbtInfo.prgrmEndDt">
+            </div>
+            <div>
+                <span>주최/후원</span>
+                <input type="text" v-model="exhbtInfo.prgrmHost">
+            </div>
+            <div>
+                <span>관람료</span>
+                <input type="number" v-model="exhbtInfo.prgrmPrice">
+            </div>
+            <div>
+                <span>관람정원</span>
+                <label for="online">온라인 - <input type="number" v-model="exhbtSpectator.onlineMaxPtcp"><span>명</span></label>
+                <label for="offline">오프라인 - <input type="number" v-model="exhbtSpectator.maxPtcp"><span>명</span></label>
+            </div>
+            <div>
+                <span>썸네일</span>
+                <input type="file"/>
+                <div>
+                    <div class="imgBox"><img src="" alt=""><button @click="fnDeleteThumbnailImg">X</button></div>
+                </div>
+            </div>
+            <div>
+                <span>전시품</span>
+                <div>
+                    <div class="imgBox"><img src="" alt=""><button @click="fnDeleteExhbtItem">X</button></div>
+                    <button @click="fnAddExhbtItemPopup">+불러오기</button>
+                </div>
+            </div>
+            <div>
+                <span>내용</span>
+                <textarea name="" id=""></textarea>
             </div>
         </div>
+        
         <div>
-            <span>전시품</span>
-            <div>
-                <div class="imgBox"><img src="" alt=""><button @click="fnDeleteExhbtItem">X</button></div>
-                <button @click="fnAddExhbtItemPopup">+불러오기</button>
-            </div>
+            <button @click="fnCancle">취소</button>
+            <button @click="fnAddExhbt">등록</button>
         </div>
-        <div>
-            <span>내용</span>
-            <textarea name="" id=""></textarea>
-        </div>
-    </div>
-    
-    <div>
-        <button @click="fnCancle">취소</button>
-        <button @click="fnAddExhbt">등록</button>
     </div>
 </template>
 <script setup>

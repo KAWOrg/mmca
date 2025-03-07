@@ -8,8 +8,7 @@
             <button>청주</button>
         </div>
         <div>
-            PreviewCard.vue Area
-
+            <PreviewCard/>
         </div>
 
         <div>
@@ -19,29 +18,21 @@
         <AdminInfoForm v-if="popState" @close="popState = false" :title="title"></AdminInfoForm>
     </div>
 </template>
-<script>
+<script setup>
+import { ref } from 'vue'
 import AdminInfoForm from '@/components/admin/popup/InfoForm.vue'
+import PreviewCard from '@/components/admin/PreviewCard.vue'
 
-export default {
-    name: 'admin-place',
-    components: {
-        AdminInfoForm
-    },
-    data() {
-        return {
-            title: '시설정보',
-            popState : false
-        }
-    },
-    methods: {
-        openAddPlacePopup() {
-            this.popState = !this.popState
-        }
-    }
+const title = ref('시설정보')
+const popState = ref(false)
+
+function openAddPlacePopup() {
+    popState.value = !popState.value
 }
+
 </script>
 <style scoped>
-    div {
-        margin: 30px 0;
-    }
+div {
+    margin: 30px 0;
+}
 </style>

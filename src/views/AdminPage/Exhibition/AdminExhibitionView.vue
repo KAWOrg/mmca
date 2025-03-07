@@ -1,16 +1,17 @@
 <template>
-    <h1>
-        전시 관리
-    </h1>
     <div>
-      <router-link to="/admin/exhbt/addExhbt" >전시추가</router-link>
+        <h1>
+            전시 관리
+        </h1>
+        <div>
+            <router-link to="/admin/exhbt/addExhbt" >전시추가</router-link>
+        </div>
+        <table>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
     </div>
-    <table>
-        <tr>
-            <td></td>
-        </tr>
-    </table>
-
 </template>
 
 <script setup>
