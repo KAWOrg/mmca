@@ -1,9 +1,20 @@
 <template>
-    전시전시
+    <div>
+        <div>   
+            검색컴포넌트
+            
+        </div>
+        <div>
+            <h2>서울 전시</h2>
 
-    서울전시
+        </div>
+        <div>
+            <h2>과천 전시</h2>
 
-    과천전시
+        </div>
+        <div>
+            <h2>덕수궁 전시</h2>
 
-    덕수궁전시
+        </div>
+    </div>
 </template>

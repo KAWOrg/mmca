@@ -2,10 +2,9 @@
     <div>
         <h2>시설정보 관리</h2>
         <div>
-            <button>서울</button>
-            <button>과천</button>
-            <button>덕수궁</button>
-            <button>청주</button>
+            <button v-for="(item, index) in musumStore.musumList" :key="index" @click="getPlaceInfo(item.musumCd)">
+                {{ item.musumNm }}
+            </button>
         </div>
         <div>
             <PreviewCard/>
@@ -19,12 +18,24 @@
     </div>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import AdminInfoForm from '@/components/admin/popup/InfoForm.vue'
 import PreviewCard from '@/components/admin/PreviewCard.vue'
+import { useMusumStore } from '@/stores/musumStore'
 
 const title = ref('시설정보')
 const popState = ref(false)
+
+const musumStore = useMusumStore();
+
+// 시설정보 목록
+function getPlaceInfo(musumCd) {
+    console.log(musumCd || '001')
+}
+
+onMounted(() => {
+   getPlaceInfo()
+})
 
 function openAddPlacePopup() {
     popState.value = !popState.value
