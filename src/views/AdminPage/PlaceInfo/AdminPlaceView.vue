@@ -2,12 +2,12 @@
     <div>
         <h2>시설정보 관리</h2>
         <div>
-            <button v-for="(item, index) in musumStore.musumList" :key="index" @click="getPlaceInfo(item.musumCd)">
+            <button v-for="(item, index) in musumStore.musumList" :key="index" @click="getPlaceInfo(item)">
                 {{ item.musumNm }}
             </button>
         </div>
         <div>
-            <PreviewCard/>
+            <PreviewCard :PlaceList="placeList"/>
         </div>
 
         <div>
@@ -18,24 +18,39 @@
     </div>
 </template>
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, watch } from 'vue'
+import { useMusumStore } from '@/stores/musumStore'
 import AdminInfoForm from '@/components/admin/popup/InfoForm.vue'
 import PreviewCard from '@/components/admin/PreviewCard.vue'
-import { useMusumStore } from '@/stores/musumStore'
+import museumPlace from '@/api/museum/museumPlace'
 
 const title = ref('시설정보')
 const popState = ref(false)
 
 const musumStore = useMusumStore();
+let placeList = ref([]);
 
 // 시설정보 목록
-function getPlaceInfo(musumCd) {
-    console.log(musumCd || '001')
+function getPlaceInfo(musumInfo) {
+
+    museumPlace.placeInfo(musumInfo || musumStore.musumList[0])
+    .then((res) => {
+        placeList.value = res.data
+       // console.log(res.data)
+    })
+    .catch(err => {
+        console.error('에러 발생:', err)
+    })
 }
 
-onMounted(() => {
-   getPlaceInfo()
-})
+// musumStore.musumList 값 들어오면 초기 실행
+watch(
+    () => musumStore.musumList,  // ① 감시 대상: musumStore.musumList를 반환하는 함수
+    (value) => {    // ② 값이 변할 때 실행될 함수
+        if(value.length > 0) getPlaceInfo()
+    },
+    { immediate: true } // 컴포넌트가 생성될 때 즉시 실행
+)
 
 function openAddPlacePopup() {
     popState.value = !popState.value
