@@ -13,7 +13,7 @@
         <h3>문화시설</h3>
         <FacilityGrid :items="CultureList">
             <template #default="{ item }">
-                <img v-if="item.imageBytes" :src="'data:image/jpeg;base64,' + item.imageBytes" alt="편의시설 이미지" />
+                <img v-if="item.imageBytes" :src="'data:image/jpeg;base64,' + item.imageBytes" alt="문화시설 이미지" />
                 <img v-else :src="noImage" alt="기본 이미지" />
                 <div>
                     <h3>{{ item.placeNm }}</h3>

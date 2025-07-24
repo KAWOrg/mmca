@@ -7,7 +7,7 @@
             </button>
         </div>
         <div>
-            <PreviewCard :PlaceList="placeList"/>
+            <PreviewCard :data="placeList"/>
         </div>
 
         <div>
