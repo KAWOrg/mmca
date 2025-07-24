@@ -14,17 +14,16 @@
             <button @click="openAddPlacePopup()">+ 시설정보 추가</button>
         </div>
 
-        <AdminInfoForm v-if="popState" @close="popState = false" :title="title"></AdminInfoForm>
+        <AdminInfoForm v-if="popState" @close="popState = false" :title="'시설정보'"></AdminInfoForm>
     </div>
 </template>
 <script setup>
 import { ref, watch } from 'vue'
 import { useMusumStore } from '@/stores/musumStore'
-import AdminInfoForm from '@/components/admin/popup/InfoForm.vue'
+import AdminInfoForm from '@/components/admin/popup/AdminInfoForm.vue'
 import PreviewCard from '@/components/admin/PreviewCard.vue'
 import museumPlace from '@/api/museum/museumPlace'
 
-const title = ref('시설정보')
 const popState = ref(false)
 
 const musumStore = useMusumStore();

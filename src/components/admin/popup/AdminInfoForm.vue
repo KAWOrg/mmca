@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <h3>{{ title }} 상세조회</h3>
+            <h3>{{ title }} 상세조회</h3>{{ data }}
             <button @click="$emit('close')">X</button>
         </div>
         <div>
@@ -18,7 +18,8 @@
                 <ul>
                     <li>
                         *미술관명: 
-                        <select v-model="placeInfo.musumCd">
+                        <span v-if="data">{{ data.musumCd }}</span>
+                        <select v-else v-model="placeInfo.musumCd">
                             <option value="">선택</option>
                             <option value="001">서울</option>
                             <option value="002">과천</option>
@@ -28,13 +29,17 @@
                     </li>
                     <li>
                         *시설종류:
-                        <select v-model="placeInfo.placeTypeCd">
+                        <span v-if="data">{{ data.cd }}</span>
+                        <select v-else v-model="placeInfo.placeTypeCd">
                             <option value="">선택</option>
                             <option value="001">편의시설</option>
                             <option value="002">문화시설</option>
                         </select>
                     </li>
-                    <li>*시설명: <input type="text" v-model="placeInfo.placeNm"></li>
+                    <li>
+                        *시설명: <span v-if="data">{{ data.title }}</span>
+                        <input v-else type="text" v-model="placeInfo.placeNm">
+                    </li>
                     <li>
                         <TiptapEditor v-model="placeInfo.editorContent" />
                     </li>
@@ -54,7 +59,8 @@ export default {
         TiptapEditor
     },
     props : {
-        title : { type: String }
+        title : { type: String },
+        data : { type: Object }
     },
 
     setup() {
