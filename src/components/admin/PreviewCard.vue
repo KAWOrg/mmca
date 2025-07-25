@@ -9,7 +9,7 @@
     </div>
 
     <!-- 상세보기 팝업 -->
-    <AdminInfoForm v-if="popState" @close="popState = false" :title="'시설정보'" :data="selectedItem"></AdminInfoForm>
+    <AdminInfoForm v-if="popState" @close="popState = false" :title="'시설정보'" :data="selectedItem" :mode="'view'"></AdminInfoForm>
 </template> 
 <script setup>
 import { ref, computed } from 'vue'

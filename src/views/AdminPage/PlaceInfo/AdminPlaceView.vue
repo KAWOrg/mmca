@@ -14,7 +14,7 @@
             <button @click="openAddPlacePopup()">+ 시설정보 추가</button>
         </div>
 
-        <AdminInfoForm v-if="popState" @close="popState = false" :title="'시설정보'"></AdminInfoForm>
+        <AdminInfoForm v-if="popState" @close="popState = false" :title="'시설정보'" :mode="'create'"></AdminInfoForm>
     </div>
 </template>
 <script setup>
